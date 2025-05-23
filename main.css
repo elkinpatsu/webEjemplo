@@ -1,0 +1,234 @@
+body {
+    margin: 0px !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+}
+
+#master-header {
+    width: 100%;
+    height: 150px;
+    background-color: #0a263a;
+    display: flex;
+    color: white;
+}
+
+.logo-container {
+    width: 300px;
+    height: 100%;
+    background-image: url(img/logo_confiabilidadmx.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 50px;
+}
+
+.contacto {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    height: 50px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellow {
+    color: #ffbe03;
+}
+
+.nav-bar {
+    width: calc(100% - 300px);
+    height: 30%;
+    display: flex;
+    align-self: end;
+}
+
+.nav-bar > .element {
+    position: relative; /* necesario para posicionar el destello */
+    overflow: hidden;   /* para que el destello no se salga del botón */
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background: rgb(4 34 53);
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  
+  /* Capa de destello */
+  .nav-bar > .element::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    pointer-events: none; /* no interfiere con el click */
+  }
+  
+  /* Activa la animación solo al hacer hover */
+  .nav-bar > .element:hover::before {
+    animation: destello .5s ease;
+  }
+  
+  @keyframes destello {
+    0% {
+      left: -75%;
+    }
+    100% {
+      left: 125%;
+    }
+  }
+  
+
+#master-body {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    width: 100%;
+    height: 500px;
+    background-image: url(img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.overlay-glass {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    left: 0px;
+    top: 150px;
+    background: rgb(0 0 0 / 20%);
+    display: flex;
+}
+
+.slogan {
+    position: absolute;
+    top: 530px;
+    right: 15px;
+    width: 400px;
+    height: 100px;
+    background: rgb(0 0 0 / 50%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    z-index: 200;
+}
+
+.carousel {
+    width: 400px;
+    height: 400px;
+    background: rgb(0 0 0 / 50%);
+    align-self: center;
+}
+
+.carousel>.element {
+    background-image: url(img/certificacion1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;    
+}
+
+.carousel>.slides {
+    display: flex;
+    width: 1800px; /* 600px * 3 imágenes */
+    transition: transform 0.5s ease-in-out;
+  }
+  
+.carousel>.slides img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.section-body {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    background: rgb(4 34 53);
+}
+
+.carousel-glass {
+    width: 100px;
+    height: 400px;
+    background: rgb(4 34 53);
+    align-self: center;
+    z-index: 100;
+}
+
+.carousel-glass-2 {
+    width: calc(100% - 500px);
+    height: 400px;
+    background: rgb(4 34 53);
+    align-self: center;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-box {
+    align-self: center;
+    justify-self: center;
+    width: 800px;
+    height: 300px;
+    background: rgb(0 0 0 / 50%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-box>.description {
+    width: 80%;
+    text-align: justify;
+}
+
+.description-box>.title {
+    width: 80%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    background: #0a263a;
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer {
+    background-image: url(img/logo_footer_2.png);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 20px;
+}
+
+.aviso-privacidad {
+    color: rgb(255 255 255 / 70%);
+    font-size: 10px;
+    margin-left: 10px;
+}
